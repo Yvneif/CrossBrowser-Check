@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Nimbus — Ship interfaces with confidence</title>
+    <style>
+      :root {
+        --accent: #6d5df6;
+        --accent-strong: #5a48e8;
+        --ink: #1c2030;
+        --muted: #5d6478;
+        --surface: #f6f7fb;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+      }
+      body {
+        font-family:
+          system-ui,
+          -apple-system,
+          'Segoe UI',
+          Roboto,
+          sans-serif;
+        color: var(--ink);
+        background: #ffffff;
+      }
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 48px;
+      }
+      .brand {
+        font-size: 20px;
+        font-weight: 800;
+        color: var(--accent);
+      }
+      .nav-links {
+        display: flex;
+        gap: 28px;
+        font-size: 15px;
+        color: var(--muted);
+      }
+      .hero {
+        /* BUG: intentionally broken for the demo — the gradient was lost to a flat
+       fill and the text color was left at the dark default on a dark surface. */
+        background: #e9eaf1;
+        color: #1c2030;
+        padding: 72px 48px 88px;
+        text-align: center;
+      }
+      .hero h1 {
+        font-size: 42px;
+        line-height: 1.15;
+        letter-spacing: -0.02em;
+      }
+      .hero p {
+        margin: 18px auto 0;
+        max-width: 560px;
+        font-size: 18px;
+        opacity: 0.92;
+      }
+      .hero .actions {
+        margin-top: 32px;
+        display: flex;
+        gap: 14px;
+        justify-content: center;
+      }
+      .btn {
+        display: inline-block;
+        border-radius: 10px;
+        padding: 13px 26px;
+        font-size: 16px;
+        font-weight: 600;
+        text-decoration: none;
+      }
+      .btn-primary {
+        background: #ffffff;
+        color: var(--accent-strong);
+      }
+      .btn-secondary {
+        background: rgba(255, 255, 255, 0.16);
+        color: #ffffff;
+        border: 1px solid rgba(255, 255, 255, 0.55);
+      }
+      .features {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        padding: 56px 48px;
+        background: var(--surface);
+      }
+      .card {
+        background: #ffffff;
+        border: 1px solid #e6e8f2;
+        border-radius: 14px;
+        padding: 26px;
+        box-shadow: 0 8px 24px rgba(28, 32, 48, 0.06);
+      }
+      .card .icon {
+        font-size: 28px;
+      }
+      .card h3 {
+        margin-top: 12px;
+        font-size: 18px;
+      }
+      .card p {
+        margin-top: 8px;
+        font-size: 14.5px;
+        line-height: 1.55;
+        color: var(--muted);
+      }
+      .stats {
+        display: flex;
+        justify-content: center;
+        gap: 64px;
+        padding: 44px 48px;
+      }
+      .stat {
+        text-align: center;
+      }
+      .stat .value {
+        font-size: 32px;
+        font-weight: 800;
+        color: var(--accent-strong);
+      }
+      .stat .label {
+        margin-top: 4px;
+        font-size: 13.5px;
+        color: var(--muted);
+      }
+      footer {
+        padding: 28px 48px;
+        border-top: 1px solid #e6e8f2;
+        font-size: 13.5px;
+        color: var(--muted);
+        text-align: center;
+      }
+      @media (max-width: 720px) {
+        .features {
+          grid-template-columns: 1fr;
+        }
+        .stats {
+          gap: 32px;
+        }
+        .hero h1 {
+          font-size: 30px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="nav">
+      <div class="brand">▲ Nimbus</div>
+      <div class="nav-links">
+        <span>Product</span><span>Docs</span><span>Pricing</span><span>Blog</span>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <h1>Ship interfaces with confidence</h1>
+      <p>
+        Nimbus watches every release for unintended visual change, so a stray CSS edit never
+        surprises your users again.
+      </p>
+      <div class="actions">
+        <a class="btn btn-primary" href="#">Get started</a>
+        <a class="btn btn-secondary" href="#">View demo</a>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="card">
+        <div class="icon">📸</div>
+        <h3>Capture everywhere</h3>
+        <p>
+          Screenshots in Chromium, Firefox and WebKit across desktop, tablet and mobile viewports —
+          nine views per run.
+        </p>
+      </div>
+      <div class="card">
+        <div class="icon">🔍</div>
+        <h3>Pixel-level diffs</h3>
+        <p>
+          Every capture is compared against its accepted baseline with a per-pixel comparison tuned
+          to ignore noise.
+        </p>
+      </div>
+      <div class="card">
+        <div class="icon">🗂️</div>
+        <h3>Browsable reports</h3>
+        <p>
+          A self-contained HTML gallery shows baseline, current and highlighted diff for every
+          combination side by side.
+        </p>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div class="stat">
+        <div class="value">3</div>
+        <div class="label">browser engines</div>
+      </div>
+      <div class="stat">
+        <div class="value">9</div>
+        <div class="label">views per run</div>
+      </div>
+      <div class="stat">
+        <div class="value">&lt;2 min</div>
+        <div class="label">full check</div>
+      </div>
+    </section>
+
+    <footer>© 2026 Nimbus Labs — demo page for the CrossBrowser-Check visual diff tool</footer>
+  </body>
+</html>
