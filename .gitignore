@@ -1,0 +1,7 @@
+node_modules/
+shots/
+report/
+baselines/
+*.log
+.env
+.DS_Store
